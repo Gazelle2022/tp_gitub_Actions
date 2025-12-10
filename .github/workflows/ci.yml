@@ -2,7 +2,7 @@ name: CI
 
 on:
   FILL:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   test:
