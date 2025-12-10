@@ -1,27 +1,31 @@
-name: Node.js CI
+name: CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
+  FILL:
     branches: [ main ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
+  test:
+    name: Test on Node.js 
+    runs-on: FILL
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
+      - name: Checkout
+        uses: FILL
 
+      - name: Use Node.js
+        uses: FILL
+        with:
+          node-version: FILL
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: FILL
+
+      - name: Run tests
+        run: FILL
+        env:
+          CI: true
+
+    
+     
